@@ -18,6 +18,10 @@ public class GameController : MonoBehaviour
     public static void ChangeGameState(GameStates state)
     {
         CurrentGameState = state;
+        if(state == GameStates.Gameplay)
+        {
+            singleton.guiController.holdStartText.gameObject.SetActive(false);
+        }
     }
 
     public void SetScore(float score)
